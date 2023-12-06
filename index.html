@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .navbar-container {
+      display: flex;
+      align-items: center;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a {
+      display: block;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li#home a {
+      background-color: yellow;
+      color: #333;
+    }
+
+    li#home a:hover {
+      background-color: #111;
+    }
+
+    li:not(#home) a {
+      color: yellow;
+    }
+
+    li:not(#home) a:hover {
+      background-color: #111;
+    }
+
+    .search-box {
+      float: left;
+      margin-left: 10px;
+    }
+
+    input[type="text"] {
+      padding: 8px;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .image-container {
+      width: 100%;
+      max-width: 580px;
+      margin-top: 10px;
+      position: relative;
+      background-color: yellow; 
+      padding: 10px; 
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    }
+
+    img {
+      width: 100%;
+      height: 30%;
+      max-height: 300px;
+    }
+
+    .image-container h1 {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: black;
+      margin: 0;
+      font-size: 28px;
+      width: 100%;
+    }
+
+    .image-container p {
+      position: absolute;
+      top: 50%; 
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      margin: 0;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    .connect-button {
+      position: absolute;
+      bottom: 10%;
+      left: 5%;
+      background-color: yellow;
+      color: black; 
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    .connect-button span {
+      margin-right: 5px;
+    }
+
+    
+    .additional-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 50%;
+      height:20%;
+      max-width: 580px;
+      margin-top: 0px;
+      background-color: #0077cc; 
+      padding: 10px; 
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    }
+
+    .additional-image {
+      margin-top: 70px;
+      width: 90%;
+      height:80%;
+      max-width: 150px;
+    }
+
+    .about-us-container{
+    color:#0077cc ;}
+    .services-container {
+      width: 46%;
+      height:30%;
+      background-color:white;
+      padding: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      color: white;
+    }
+
+    .about-us-heading{
+      color: white;
+      margin-left: 100px;
+    }
+    .services-heading {
+      font-size: 24px;
+      margin: 0;
+      color:black;
+    }
+
+    .about-us-paragraph{
+      color: white;
+      font-size: 18px;
+      margin-left: 100px;
+    }
+
+    .service-images-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0px;
+    }
+
+    .service-image {
+      width: 50%;
+      height: 85%;
+      position: relative;
+    }
+
+    .colored-background {
+      background-color: yellow; 
+      width: 80%;
+
+      padding: 30px;
+      color: black; 
+      margin-top: 0px;
+    }
+
+    .service-heading {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .service-buttons-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    .service-button {
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    .arrow-icon {
+      margin-left: 5px;
+    }
+
+    
+    .additional-image-row {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0px; 
+    }
+
+    .additional-image:nth-child(1) {
+      margin-top: 0px;
+      margin-right: 10px; 
+      width: 100%; 
+      max-width: 150px;
+      height: 70%; 
+    }
+    .additional-image:nth-child(2) {
+      margin-top: 0px; 
+      margin-right: 10px; 
+      width: 100%; 
+      max-width: 150px;
+      height: 90%;
+    }
+
+    .additional-image:nth-child(3) {
+      margin-top: 0px; 
+      width: 100%; 
+      max-width: 150px;
+      height: 80%; 
+    }
+    .colored-background {
+      background-color: yellow; 
+      width: 80%;
+
+      padding: 30px;
+      color: black; 
+      margin-top: 0px;
+    }
+    .additional-button {
+      background-color: blue;
+      color: white;
+      border: none;
+      padding: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+    .vision-container {
+      background-image: url(2nd.avif); 
+    
+      width: 500%;
+      background-position: center;
+      text-align: center;
+      text-size-adjust: 100px;
+      color:Blue;
+      padding: 50px;
+      margin-top: 20px;
+    }
+    .contact-container {
+      margin-top: 20px; 
+      display: flex; 
+      justify-content: space-between;
+    }
+
+    .contact-form {
+      width: 100%; 
+    }
+    .map-container {
+      width: 200px; 
+      height: 200px; 
+    }
+    .hours-section {
+      width: 100%; 
+      margin-top: 20px; 
+    }
+
+    .hours-heading {
+      font-size: 24px; 
+      margin-bottom: 10px; 
+    }
+
+    .hours-text {
+      font-size: 16px; 
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <div class="navbar-container">
+    <ul>
+      <li id="home"><a href="#home">Home</a></li>
+      <li><a href="#About_us">About us</a></li>
+      <li><a href="#Services">Services</a></li>
+      <li><a href="#Team">Team</a></li>
+      <li><a href="#Contact">Contact</a></li>
+    </ul>
+
+    <div class="search-box">
+      <input type="text" placeholder="Search">
+    </div>
+  </div>
+
+  <div class="image-container">
+    <img src="dark.webp" alt="Your Image">
+    <h1>Welcome to Three Star Media</h1>
+    <p>Three Star Media's office is a vibrant and collaborative space, fostering creativity and innovation. With a dynamic team and state-of-the-art facilities, it's a hub where ideas flourish, and projects come to life.</p>
+    <button class="connect-button">
+      <span>&rarr;</span> Connect to Us
+    </button>
+  </div>
+
+  
+  <div class="additional-container">
+    <div class="additional-image">
+      <img src="2nd.avif" alt="Additional Image">
+    </div>
+    <div class="about-us-container">
+      <h2 class="about-us-heading">About Us</h2>
+      <p class="about-us-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo nec turpis aliquam bibendum. Vestibulum vestibulum diam vitae dolor eleifend, id convallis quam fringilla.</p>
+    </div>
+  </div>
+
+  <div class="services-container">
+    <h2 class="services-heading">Our Services</h2>
+    <div class="service-images-container">
+      <div class="service-image">
+        <img src="11.jpeg" alt="Service 1">
+        <div class="colored-background">
+          <h3 class="service-heading">Digital Transformation</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo nec turpis aliquam bibendum. Vestibulum vestibulum diam vitae dolor eleifend, id convallis quam fringilla.</p>
+          <div class="service-buttons-container">
+            <button class="service-button">Digital Plans <span class="arrow-icon">&rarr;</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="service-image">
+        <img src="ab.jpeg" alt="Service 2">
+        <div class="colored-background">
+          <h3 class="service-heading">Marketing</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo nec turpis aliquam bibendum. Vestibulum vestibulum diam vitae dolor eleifend, id convallis quam fringilla.</p>
+          <div class="service-buttons-container">
+            <button class="service-button">Marketing Plans <span class="arrow-icon">&rarr;</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="additional-image-row">
+    <div class="additional-image">
+      <img src="11.jpeg" alt="Image 1">
+      
+      <div class="colored-background">
+        <h3>Video Production</h3>
+       
+       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo nec turpis aliquam bibendum.</p>
+       <button class="additional-button">Learn More <span class="arrow-icon">&rarr;</span></button>
+      </div>
+    </div>
+    <div class="additional-image">
+      <img src="11.jpeg" alt="Image 2">
+     
+      <div class="colored-background">
+        <h3>Web Development</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo nec turpis aliquam bibendum. </p>
+        <button class="additional-button">Learn More <span class="arrow-icon">&rarr;</span></button>
+      </div>
+    </div>
+    <div class="additional-image">
+      <img src="11.jpeg" alt="Image 3">
+      
+      <div class="colored-background">
+        <h3>Print</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo nec turpis aliquam bibendum.</p>
+        <button class="additional-button">Learn More <span class="arrow-icon">&rarr;</span></button>
+      </div>
+      <div class="vision-container">
+        <h2>Our Vision</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis leo nec turpis aliquam bibendum.</p>
+        <button class="additional-button">Learn More <span class="arrow-icon">&rarr;</span></button>
+        </div>
+        <div class="contact-container">
+          <h2 class="contact-heading">Contact Us</h2>
+        
+          
+        </div>
+        <div class="contact-form">
+          <h2 class="contact-heading">Contact Form</h2>
+          
+          <form action="#" method="post">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+    
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+    
+        
+        <div class="map-container">
+          
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.678901234567!2d-74.005972!3d40.712776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjnCsDQzJzQ2LjYiTiA3NMKwMDgnNDIuNyJX!5e0!3m2!1sen!2sus!4v1234567890123"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+      <div class="hours-section">
+        <h2 class="hours-heading">Hours of Operation</h2>
+        <p class="hours-text">Monday to Friday: 9:00 AM - 5:00 PM</p>
+        <p class="hours-text">Saturday: 10:00 AM - 2:00 PM</p>
+</body>
+
+</html>
